@@ -16,7 +16,6 @@ Install the dependencies using NPM or Yarn:
 
     $ npm install
 
-#### Run locally
 To run your function app locally using Core Tools, run the following command:
 
     $ npm start
