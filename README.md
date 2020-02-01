@@ -16,7 +16,7 @@ Install the dependencies using NPM or Yarn:
 
     $ npm install
 
-##### Run locally
+#### Run locally
 To run your function app locally using Core Tools, run the following command:
 
     $ npm start
@@ -34,7 +34,7 @@ To run your function app locally using Core Tools, run the following command:
 
 - For Linux: See the [docs](https://docs.microsoft.com/nl-nl/azure/azure-functions/functions-run-local?tabs=linux#install-the-azure-functions-core-tools). It's a bit more complex.
 
-##### Publish to Azure
+#### Publish to Azure
 Create a production-ready build of JavaScript files from the TypeScript source files:
 
     $ npm run build:production
@@ -78,19 +78,19 @@ Running `npm test` starts Jest and runs the tests.
 
 Consider the practices mentioned below when coding your application.
 
-##### Asynchronous programming
+#### Asynchronous programming
 When writing Azure Functions in JavaScript, you should write code using the `async` and `await` keywords. Writing code using async and await instead of callbacks or `.then` and `.catch` with Promises helps avoid two common problems:
 
 1. Throwing uncaught exceptions that crash the Node.js process, potentially affecting the execution of other functions.
 2. Unexpected behavior, such as missing logs from `context.log`, caused by asynchronous calls that are not properly awaited.
 
-##### Loose coupling
+#### Loose coupling
 Write your business logic so that it is separate from your FaaS provider (e.g., Azure Functions), to keep it provider-independent, reusable and more easily testable. Construct and inject dependencies instead of using them directly in your function, this way you can easily replace these services with mocks.
 
-##### Write stateless
+#### Write stateless
 Functions should be stateless and idempotent if possible. You have no guarantee that the application state is persisted across multiple or different function calls or contexts.
 
-##### Think small
+#### Think small
 Large, long-running functions can cause unexpected timeout issues. Whenever possible, refactor large functions into smaller function sets that work together and return responses fast. Processing time-consuming tasks can be deferred until a later time.
 
 ## Next steps
